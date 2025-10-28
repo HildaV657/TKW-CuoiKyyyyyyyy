@@ -34,7 +34,7 @@ header {
   font-weight: 500;
 }
 .hero {
-  background: url('/img/hanoi.jpg') center/cover no-repeat;
+  background: url('../img/hanoi.jpg') center/cover no-repeat;
   color: white;
   height: 80vh;
   display: flex;
