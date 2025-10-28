@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dịch Vụ Khác - L'Hospital Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style-footer.css">
+  <link rel="stylesheet" href="/css/style-header.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f8f5ff, #fff);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-card img {
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+    .service-card:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.75);
+    }
+    .btn-gradient {
+      background: linear-gradient(90deg, #4F1C6B, #a855f7);
+      transition: 0.3s;
+    }
+    .btn-gradient:hover {
+      filter: brightness(1.1);
+      transform: scale(1.05);
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ttc-purple': '#582590',
+            'ttc-dark-purple': '#401a69',
+          },
+        },
+      },
+    };
+    function handleFadeIn() {
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("show");
+        }
+      });
+    }
+    window.addEventListener("load", handleFadeIn);
+    window.addEventListener("scroll", handleFadeIn);
+  </script>
+</head>
+<body class="bg-gray-50">
+  <div class="banner">
+    <img src="/img/slogan.png" alt="Slogan">
+  </div>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo"><b>L'Hospital Travel</b></h1>
+      <ul class="nav-links">
+        
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="/pages/BookTours.html">Đặt tour</a></li>
+        <li><a href="/pages/Gioithieu.html">Liên hệ</a></li>
+        <li><a href="/pages/services.html">Các dịch vụ khác</a></li>
+        <li><a href="/pages/cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container mx-auto px-4 py-16 sm:py-20">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-6 fade-in">
+      ✨ Dịch Vụ Du Lịch Khác ✨
+    </h1>
+    <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">
+      Không chỉ tổ chức tour, L'Hospital Travel còn cung cấp các dịch vụ đa dạng giúp chuyến đi của bạn thêm trọn vẹn, tiện lợi và đáng nhớ.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+      <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden fade-in hover:-translate-y-2 transition-all duration-500">
+        <div class="aspect-video w-full overflow-hidden">
+          <img src="/img/cacdichvukhac/thuexe.png" alt="Thuê xe du lịch" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-ttc-purple mb-3">Thuê Xe Du Lịch</h3>
+          <p class="text-gray-600 text-sm mb-5">Thuê xe tự lái hoặc có tài xế, xe đời mới – an toàn và tiện nghi cho mọi hành trình.</p>
+          <a href="rent-car.html" class="btn-gradient inline-block text-white px-6 py-2 rounded-full text-sm font-semibold">Xem Chi Tiết</a>
+        </div>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden fade-in hover:-translate-y-2 transition-all duration-500">
+        <div class="aspect-video w-full overflow-hidden">
+          <img src="/img/cacdichvukhac/qualuuniem.png" alt="Quà lưu niệm" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-ttc-purple mb-3">Quà Lưu Niệm Online</h3>
+          <p class="text-gray-600 text-sm mb-5">Đặt mua đặc sản, quà lưu niệm chính gốc địa phương – giao tận nhà nhanh chóng.</p>
+          <a href="souvenir-shop.html" class="btn-gradient inline-block text-white px-6 py-2 rounded-full text-sm font-semibold">Khám Phá Shop</a>
+        </div>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden fade-in hover:-translate-y-2 transition-all duration-500">
+        <div class="aspect-video w-full overflow-hidden">
+          <img src="/img/cacdichvukhac/camtrai.jpg" alt="Thuê đồ cắm trại" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-ttc-purple mb-3">Thuê Đồ Cắm Trại</h3>
+          <p class="text-gray-600 text-sm mb-5">Lều, bếp, túi ngủ và hơn thế nữa — tất cả cho chuyến dã ngoại hoàn hảo.</p>
+          <a href="camping-gear.html" class="btn-gradient inline-block text-white px-6 py-2 rounded-full text-sm font-semibold">Xem Thiết Bị</a>
+        </div>
+      </div>
+      <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden fade-in hover:-translate-y-2 transition-all duration-500">
+        <div class="aspect-video w-full overflow-hidden">
+          <img src="/img/cacdichvukhac/amthuc.png" alt="Đặt món ăn đặc sản" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold text-ttc-purple mb-3">Đặt Món Ăn Đặc Sản</h3>
+          <p class="text-gray-600 text-sm mb-5">Thưởng thức đặc sản vùng miền do nhà hàng địa phương chế biến – giao tận nơi.</p>
+          <a href="food-blog.html" class="btn-gradient inline-block text-white px-6 py-2 rounded-full text-sm font-semibold">Đặt Món Ngay</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="/img/logo.png" alt="L'Hospital Travel">
+      </div>
+
+      <div class="footer-info">
+        <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
+        <p><i class="fa fa-map-marker"></i> 280 An Dương Vương, Phường Chợ Quán, Quận 5, TP. Hồ Chí Minh</p>
+      </div>
+
+      <div class="icon">
+        <p>Mạng xã hội</p>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-twitter"></i>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>FIT HCMUE © 2025</p>
+      <div class="footer-pay">
+        <p>Chấp nhận thanh toán</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

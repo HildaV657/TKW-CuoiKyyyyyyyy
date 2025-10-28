@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt Món Ăn Đặc Sản - L'Hospital Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style-header.css">
+  <link rel="stylesheet" href="/css/style-footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ttc-purple': '#582590',
+            'ttc-dark-purple': '#401a69',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 relative">
+
+    <div class="banner">
+        <img src="/img/slogan.png" >
+    </div>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"><b>L'Hospital Travel</b></h1>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="/pages/BookTours.html">Đặt tour</a></li>
+                <li><a href="/pages/Gioithieu.html">Liên hệ</a></li>
+                <li><a href="/pages/services.html">Các dịch vụ khác</a></li>
+                <li><a href="/pages/cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
+
+            </ul>
+        </nav>
+    </header>
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-4">Đặt Món Ăn Đặc Sản Việt Nam</h1>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      Thưởng thức hương vị đặc sản ba miền ngay tại nhà. L'Hospital Travel mang đến món ngon chuẩn vị từ Bắc chí Nam.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <script>
+        const foods = [
+          {name:"Phở Bò Hà Nội",desc:"Tinh túy ẩm thực miền Bắc, nước dùng thanh ngọt.",price:"69.000 VNĐ / tô",img:"/img/datdoan/doan.jpg"},
+          {name:"Bún Chả Hà Nội",desc:"Chả nướng thơm, nước chấm chua ngọt hài hòa.",price:"99.000 VNĐ / phần",img:"/img/datdoan/doan2.jpg"},
+          {name:"Mỳ Quảng Gà Tam Kỳ",desc:"Đậm đà hương vị miền Trung, sợi mì vàng óng.",price:"70.000 VNĐ / phần",img:"/img/datdoan/doan3.jpg"},
+          {name:"Bún Bò Huế",desc:"Cay nồng, đậm đà, đúng chuẩn vị cố đô.",price:"110.000 VNĐ / tô",img:"/img/datdoan/doan4.webp"},
+          {name:"Cơm Tấm Sài Gòn",desc:"Sườn nướng, bì, chả trứng – món ăn quốc dân.",price:"90.000 VNĐ / phần",img:"/img/datdoan/doan5.jpg"},
+          {name:"Bánh Xèo Miền Tây",desc:"Giòn rụm, nhân tôm thịt giá đỗ hấp dẫn.",price:"45.000 VNĐ / cái",img:"/img/datdoan/doan6.jpg"},
+          {name:"Gà Nướng Cơm Lam",desc:"Gà nướng giòn rụm, đậm đà hương vị núi rừng!",price:"399.000 VNĐ",img:"/img/datdoan/doan7.jpg"},
+          {name:"Lẩu Mắm Miền Tây",desc:"Thơm lừng mắm cá, cay nồng mà cuốn khó cưỡng!",price:"450.000 VNĐ / phần",img:"/img/datdoan/doan8.jpg"}
+        ];
+        document.write(
+          foods.map(f=>`
+          <div class='bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300'>
+            <img src='${f.img}' alt='${f.name}' class='w-full h-56 object-contain bg-gray-100'>
+            <div class='p-5 text-center'>
+              <h3 class='text-lg font-bold text-gray-800'>${f.name}</h3>
+              <p class='text-gray-500 text-sm mb-2'>${f.desc}</p>
+              <p class='text-ttc-purple font-semibold text-lg mb-3'>${f.price}</p>
+              <button class='add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90'>Thêm vào giỏ</button>
+            </div>
+          </div>`).join('')
+        );
+      </script>
+    </div>
+  </main>
+  <div id="thankYouPopup" class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50">
+    <div class="bg-white rounded-2xl p-8 text-center shadow-2xl animate-fadeIn">
+      <h2 class="text-2xl font-bold text-ttc-purple mb-2">Cảm ơn quý khách!</h2>
+      <p class="text-gray-600 mb-4">Sản phẩm đã được thêm vào giỏ hàng thành công.</p>
+      <button id="closePopup" class="bg-ttc-purple text-white px-6 py-2 rounded-full hover:bg-opacity-90">Đóng</button>
+    </div>
+  </div>
+  <style>
+    @keyframes fadeIn { from {opacity:0; transform:scale(0.9);} to {opacity:1; transform:scale(1);} }
+    .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+  </style>
+  <script>
+    const popup = document.getElementById('thankYouPopup');
+    const closeBtn = document.getElementById('closePopup');
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('add-to-cart')) {
+        popup.classList.remove('hidden');
+        popup.classList.add('flex');
+        setTimeout(() => popup.classList.add('hidden'), 2500);
+      }
+    });
+    closeBtn.addEventListener('click', () => {
+      popup.classList.add('hidden');
+    });
+  </script>
+  <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/img/logo.png" alt="L'Hospital Travel">
+            </div>
+            <div class="footer-info">
+                <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
+                <p><i class="fa fa-map-marker"></i> 280 An Dương Vương, Phường Chợ Quán, Quận 5, TP. Hồ Chí Minh</p>
+            </div>
+            <div class="icon">
+                <p>Mạng xã hội</p>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>FIT HCMUE © 2025</p>
+            <div class="footer-pay">
+                <p>Chấp nhận thanh toán</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+            </div>
+        </div>
+  
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán Tour Du lịch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style-booking1.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #6a1b9a; 
+            --secondary-color: #c64ab8; 
+            --dark-color: #013668; 
+            --light-color: #f6f7f8;
+            --text-color: #222;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+        header {
+            background: white;
+            color: #4F1C6B ;
+            padding: 15px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .checkout-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .customer-info-section {
+            flex: 1; 
+            min-width: 60%;
+        }
+
+        .checkout-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(3,10,25,0.06);
+            padding: 25px;
+            margin-bottom: 20px;
+            background: #EEEEEE;
+        }
+        .checkout-card .card-header {
+            font-family: "SVN-Gilroy-Bold", sans-serif;
+            font-size: 20px;
+            color: var(--dark-color);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .form-control, .form-select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            font-size: 15px;
+            box-shadow: none;
+            transition: border-color 0.2s;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+        }
+        .order-summary-section {
+            width: 380px; 
+        }
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 15px;
+        }
+        .summary-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .summary-total {
+            padding-top: 15px;
+            font-size: 18px;
+            font-family: "SVN-Gilroy-Bold", sans-serif;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+        .summary-total span {
+            color: #d32f2f;
+            font-size: 24px;
+        }
+
+        .btn-checkout-confirm {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            background: linear-gradient(90deg, #7b3cd6, #c64ab8);
+            color: #fff;
+            margin-top: 20px;
+            transition: opacity 0.2s;
+        }
+        .btn-checkout-confirm:hover {
+            opacity: 0.9;
+        }
+        .booking__success{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        ul.payment-method {
+            list-style: none; 
+            padding: 0; 
+            margin: 15px 0 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+        }
+        ul.payment-method li { 
+            width: 100%; 
+        }
+        ul.payment-method input[type="radio"]{ 
+            display: none; 
+        }
+        ul.payment-method label{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            background: #fbfbfb;
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: all .18s;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+        ul.payment-method input[type="radio"]:checked + label{
+            background: var(--light-color);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(103,58,183,0.1);
+            transform: none; 
+        .payment-method label i {
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="ck-content">
+    <div class="banner">
+        <img src="/img/slogan.png" >
+    </div>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">L'Hospital Travel</h1>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="/pages/BookTours.html">Đặt tour</a></li>
+                <li><a href="/pages/Gioithieu.html">Liên hệ</a></li>
+                <li><a href="/pages/services.html">Các dịch vụ khác</a></li>
+                <li><a href="/pages/cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="checkout-layout">
+
+        <div class="customer-info-section">
+            <form action="/submit-checkout" method="POST">
+                <div class="checkout-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-user-check"></i> Thông tin khách hàng
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="fullname">Họ và tên (*)</label>
+                                <input type="text" id="fullname" name="fullname" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="phone">Số điện thoại (*)</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (*)</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Địa chỉ liên hệ</label>
+                            <input type="text" id="address" name="address" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Yêu cầu đặc biệt (Nếu có)</label>
+                            <textarea id="note" name="note" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-card">
+                    <div class="card-header">
+                        <i class="fa-solid fa-money-check-dollar"></i> Phương thức thanh toán
+                    </div>
+                    <ul class="payment-method">
+                        <li>
+                            <input type="radio" id="bank-transfer" name="payment_method" value="bank_transfer" checked>
+                            <label for="bank-transfer">
+                                <i class="fa-solid fa-university"></i> Chuyển khoản ngân hàng (Miễn phí)
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="momo" name="payment_method" value="momo">
+                            <label for="momo">
+                                <i class="fa-solid fa-qrcode"></i> Thanh toán qua Momo/ZaloPay
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="office-pay" name="payment_method" value="office_pay">
+                            <label for="office-pay">
+                                <i class="fa-solid fa-handshake"></i> Thanh toán tại văn phòng L'Hospital Travel
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="order-summary-section">
+            <div class="checkout-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-receipt"></i> Tóm tắt đơn hàng
+                </div>
+                <div class="card-body">
+                    <div class="summary-item">
+                        <span>Tour: Du lịch SaPa</span>
+                        <span>1 Người</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Ngày khởi hành: 28/10/2025</span>
+                        <span>TP Hồ Chí Minh</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Giá gốc (1 Người)</span>
+                        <span>15.990.000VND</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Chiết khấu/Khuyến mãi</span>
+                        <span style="color: #4CAF50;">-1.100.000VND</span>
+                    </div>
+                    
+                    <div class="summary-total">
+                        Thành tiền: <span>14.890.000VND</span>
+                    </div>
+
+                    <button type="submit" class="btn-checkout-confirm" form="checkout-form">
+                        <a href="BookingSuccess.html" class="booking__success"> HOÀN TẤT THANH TOÁN </a> 
+                    </button>
+                    
+                    <p style="font-size: 12px; color: #777; text-align: center; margin-top: 15px;">
+                        Bằng việc xác nhận, bạn đồng ý với Chính sách & Điều khoản.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/img/logo.png" alt="L'Hospital Travel">
+            </div>
+
+            <div class="footer-info">
+                <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
+                <p><i class="fa fa-map-marker"></i> 280 An Dương Vương, Phường Chợ Quán, Quận 5, TP. Hồ Chí Minh</p>
+            </div>
+
+            <div class="icon">
+                <p>Mạng xã hội</p>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>FIT HCMUE © 2025</p>
+            <div class="footer-pay">
+                <p>Chấp nhận thanh toán</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

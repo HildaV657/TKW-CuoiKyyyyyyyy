@@ -1,0 +1,314 @@
+/* ======================================= */
+/*               1. HEADER & MENU           */
+/* ======================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+.banner img {
+  width: 100%;
+  display: block;
+}
+header {
+  background: white;
+  color: #4F1C6B ;
+  padding: 15px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* ======================================= */
+/*               2. BANNER MAIN             */
+/* ======================================= */
+.banner_main {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.banner_main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Làm mờ ảnh nền */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.title_banner_main {
+    position: relative;
+    z-index: 10;
+    color: white;
+}
+.title_banner_main h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ======================================= */
+/*             3. TIÊU ĐỀ CHUNG & BUTTON     */
+/* ======================================= */
+.container{
+    text-align: center;
+}
+h3 {
+    color: #4F1C6B;
+}
+.wrap-item {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.boxx {
+    margin-top:50px;
+    display: inline-block;
+    padding: 14px 40px;
+    background: white;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.text-center {
+    margin-top:50px;
+    margin-bottom:50px;
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(-45deg, #df4781, #b18fd5, #70209f, #481267, #471267);
+    border-radius: 50px;
+    color:white;
+    font-size: 25px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.text {
+    color: gray;
+    font-size: 18px;
+}
+.text-why {
+    color: gray;
+    text-align: left;
+
+}
+
+.travel_uss{
+    text-decoration: none;
+    color: white;
+}
+.travel_uss:hover {
+    /* Đảo ngược màu khi hover */
+    background-color: var(--primary-color);
+    color: white;
+}
+/* ======================================= */
+/*               4. KHU VỰC CHUNG (meetOurTeam) */
+/* ======================================= */
+.position {
+    color: gray;
+}
+.meetOurTeam {
+    background-image: url('/Gioithieu/gioithieu.img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #faf7faf4;
+    padding: 50px 0; 
+}
+
+.meetOurTeam .title_meet {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.meetOurTeam .row {
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 30px; 
+}
+
+/* ======================================= */
+/*               5. TỪNG BOX (wrapper) */
+/* ======================================= */
+.meetOurTeam .wrapper {
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    border-radius: 8px;
+    margin-bottom: 0; 
+}
+.meetOurTeam .text_tieusu {
+    padding: 30px; 
+}
+.meetOurTeam .text_tieusu h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: rgb(254, 252, 254);
+}
+
+/* Định dạng Vị trí */
+.meetOurTeam .text_tieusu .position {
+    display: block;
+    font-size: 1rem;
+    color: #2c2d2f; 
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Định dạng Đoạn Văn */
+.meetOurTeam .text_tieusu p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: gray;
+    margin-bottom: 0;
+    text-align: left;
+}
+/* ======================================= */
+/*               6. FOOTER
+/* ======================================= */
+footer {
+      background: linear-gradient(135deg, #f9f9fb, #eef0ff);
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #333;
+      padding: 50px 0 20px;
+      border-top: 3px solid ;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+      padding-bottom: 30px;
+      border-bottom: 1px solid white;
+    }
+
+    .footer-logo img {
+      width: 130px;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-info h4 {
+      color: #000;
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .footer-info p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .footer-info i {
+      color: #4F1C6B;
+      margin-right: 8px;
+    }
+
+    /* --- Footer bottom --- */
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 20px auto 0;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+    }
+
+    .footer-pay {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-pay p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .footer-pay img {
+      height: 25px;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-pay img:hover {
+      transform: scale(1.1);
+    }
+
+    /* --- Mạng xã hội --- */
+    .icon {
+      text-align: right;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .icon p {
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #4F1C6B;
+    }
+
+    .icon i {
+      font-size: 20px;
+      margin: 0 6px;
+      color: #4F1C6B;
+      cursor: pointer;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .icon i:hover {
+      color: #4F1C6B;
+      transform: translateY(-3px);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .footer-container {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .icon {
+        text-align: center;
+        margin-right: 0;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }

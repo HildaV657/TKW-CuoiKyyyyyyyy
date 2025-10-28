@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thuê Đồ Cắm Trại - L'Hospital Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style-footer.css">
+  <link rel="stylesheet" href="/css/style-header.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ttc-purple': '#4F1C6B',
+            'ttc-dark-purple': '#4F1C6B',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50">
+  <div class="banner">
+        <img src="/img/slogan.png" >
+    </div>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"><b>L'Hospital Travel</b></h1>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="/pages/BookTours.html">Đặt tour</a></li>
+                <li><a href="/pages/Gioithieu.html">Liên hệ</a></li>
+                <li><a href="/pages/services.html">Các dịch vụ khác</a></li>
+                <li><a href="/pages/cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
+
+            </ul>
+        </nav>
+    </header>
+        <button class="lg:hidden p-2" id="mobile-menu-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-4">Thuê Dụng Cụ Cắm Trại</h1>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Trang bị đầy đủ cho chuyến phiêu lưu tiếp theo của bạn mà không cần mua sắm tốn kém.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <img src="/img/thue_do_cam_trai/camtrai1.jpg" alt="Lều 2 Người" class="w-full h-56 sm:h-60 object-contain bg-gray-100">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Lều cắm trại 2 người</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">120.000 VNĐ / ngày</p>
+          <button class="rent-btn w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thuê ngay</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <img src="/img/thue_do_cam_trai/camtrai2.jpg" alt="Bếp Nướng BBQ" class="w-full h-56 sm:h-60 object-contain bg-gray-100">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Bếp nướng BBQ (kèm vỉ)</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">100.000 VNĐ / ngày</p>
+          <button class="rent-btn w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thuê ngay</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <img src="/img/thue_do_cam_trai/camtrai3.jpg" alt="Túi Ngủ" class="w-full h-56 sm:h-60 object-contain bg-gray-100">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Túi ngủ du lịch</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">50.000 VNĐ / ngày</p>
+          <button class="rent-btn w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thuê ngay</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <img src="/img/thue_do_cam_trai/camtrai4.jpg" alt="Bộ Bàn Ghế Gấp" class="w-full h-56 sm:h-60 object-contain bg-gray-100">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Bộ bàn ghế dã ngoại (4 ghế)</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">150.000 VNĐ / ngày</p>
+          <button class="rent-btn w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thuê ngay</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <div id="popup-success" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 text-center animate-fadeIn max-w-sm mx-auto">
+      <h3 class="text-2xl font-bold text-ttc-purple mb-3">Thuê thành công!</h3>
+      <p class="text-gray-600 mb-6">Chúc bạn có 1 buổi đi chơi thật hạnh phúc cùng với <span class="font-semibold text-ttc-purple">L'Hospital</span> 💜</p>
+      <button id="close-popup" class="bg-ttc-purple text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition">Đóng</button>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="/img/logo.png" alt="L'Hospital Travel">
+    </div>
+
+    <div class="footer-info">
+      <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
+      <p><i class="fa fa-map-marker"></i> 280 An Dương Vương, Phường Chợ Quán, Quận 5, TP. Hồ Chí Minh</p>
+    </div>
+
+    <div class="icon">
+      <p>Mạng xã hội</p>
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-twitter"></i>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>FIT HCMUE © 2025</p>
+    <div class="footer-pay">
+      <p>Chấp nhận thanh toán</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+    </div>
+  </div>
+</footer>
+  <script>
+    const rentButtons = document.querySelectorAll('.rent-btn');
+    const popup = document.getElementById('popup-success');
+    const closePopup = document.getElementById('close-popup');
+
+    rentButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        popup.classList.remove('hidden');
+        setTimeout(() => popup.classList.add('hidden'), 3000);
+      });
+    });
+
+    closePopup.addEventListener('click', () => popup.classList.add('hidden'));
+    popup.addEventListener('click', e => {
+      if (e.target === popup) popup.classList.add('hidden');
+    });
+  </script>
+
+</body>
+</html>

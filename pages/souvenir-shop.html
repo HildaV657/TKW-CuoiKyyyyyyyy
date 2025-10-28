@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cửa Hàng Quà Lưu Niệm - L Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style-footer.css">
+  <link rel="stylesheet" href="/css/style-header.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ttc-purple': '#582590',
+            'ttc-dark-purple': '#401a69',
+          }
+        }
+      }
+    }
+    
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <div class="banner">
+        <img src="/img/slogan.png" >
+    </div>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"><b>L'Hospital Travel</b></h1>
+            <ul class="nav-links">
+              
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="/pages/BookTours.html">Đặt tour</a></li>
+        <li><a href="/pages/Gioithieu.html">Liên hệ</a></li>
+        <li><a href="/pages/services.html">Các dịch vụ khác</a></li>
+        <li><a href="/pages/cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-4">Cửa Hàng Quà Lưu Niệm</h1>
+    <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+      Mang hương vị và kỷ niệm của chuyến đi về nhà bạn, hoặc gửi tặng người thân yêu.
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang1.png" alt="Nón lá Huế" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Nón lá bài thơ (Huế)</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">150.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang2.png" alt="Túi cói đay" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Túi cói Đay tự nhiên</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">220.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang3.png" alt="Áo dài truyền thống" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Áo dài truyền thống</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">999.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang4.png" alt="Lồng đèn Hội An" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Lồng đèn Hội An</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">100.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang5.png" alt="Bát gáo dừa" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Bát gáo dừa</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">50.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang6.png" alt="Khăn lụa Hà Đông" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Khăn lụa Hà Đông</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">450.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang7.png" alt="Ví thổ cẩm" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Ví thổ cẩm</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">89.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl">
+        <img src="../img/mua_do_luu_niem/quatang8.png" alt="Trống đồng mini" class="w-full h-56 object-contain bg-gray-100 p-3">
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-bold text-gray-800 mb-1">Mô hình mặt trống đồng</h3>
+          <p class="text-ttc-purple font-semibold text-lg mb-3">580.000 VNĐ</p>
+          <button class="add-to-cart w-full bg-ttc-purple text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="thankYouPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 text-center animate-fadeIn max-w-sm">
+      <h3 class="text-2xl font-bold text-ttc-purple mb-4">🎁 Đã thêm vào giỏ hàng!</h3>
+      <p class="text-gray-600 mb-6">Cảm ơn quý khách đã chọn sản phẩm của <span class="font-semibold text-ttc-purple">L'Hospital</span> 💜</p>
+      <button id="closePopup" class="bg-ttc-purple text-white px-6 py-2 rounded-full font-semibold hover:bg-ttc-dark-purple transition">
+        Đóng
+      </button>
+    </div>
+  </div>
+  <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/img/logo.png" alt="L'Hospital Travel">
+            </div>
+
+            <div class="footer-info">
+                <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
+                <p><i class="fa fa-map-marker"></i> 280 An Dương Vương, Phường Chợ Quán, Quận 5, TP. Hồ Chí Minh</p>
+            </div>
+
+            <div class="icon">
+                <p>Mạng xã hội</p>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>FIT HCMUE © 2025</p>
+            <div class="footer-pay">
+                <p>Chấp nhận thanh toán</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+            </div>
+        </div>
+    </footer>
+
+
+  <!-- SCRIPT -->
+  <script>
+    const popup = document.getElementById("thankYouPopup");
+    const closeBtn = document.getElementById("closePopup");
+    const addButtons = document.querySelectorAll(".add-to-cart");
+
+    addButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        popup.classList.remove("hidden");
+        setTimeout(() => popup.classList.add("hidden"), 3000);
+      });
+    });
+
+    closeBtn.addEventListener("click", () => popup.classList.add("hidden"));
+    popup.addEventListener("click", e => {
+      if (e.target === popup) popup.classList.add("hidden");
+    });
+  </script>
+</body>
+</html>
