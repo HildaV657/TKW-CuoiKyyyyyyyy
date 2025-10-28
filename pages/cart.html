@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style-cart.css">
 </head>
+
 <body>
     <div class="banner">
-        <img src="/img/slogan.png" alt="Banner">
+        <img src="../img/slogan.png" alt="Banner">
     </div>
-    
+
     <header>
         <nav class="navbar">
             <h1 class="logo">L'Hospital Travel</h1>
             <ul class="nav-links">
-                <li><a href="../index.html">Trang chủ</a></li>
-                <li><a href="/pages/BookTours.html">Đặt tour</a></li>
-                <li><a href="/pages/Gioithieu.html">Liên hệ</a></li>
-                <li><a href="/pages/services.html">Các dịch vụ khác</a></li>
-                <li><a href="/pages/cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="BookTours.html">Đặt tour</a></li>
+                <li><a href="Gioithieu.html">Liên hệ</a></li>
+                <li><a href="services.html">Các dịch vụ khác</a></li>
+                <li><a href="cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <div class="cart-container">
         <h2 class="mb-4">Giỏ Hàng Của Bạn</h2>
-        
+
         <div class="row">
             <div class="col-lg-8">
                 <div id="cart-items">
                 </div>
             </div>
-            
+
             <div class="col-lg-4">
                 <div class="cart-summary">
                     <h4 class="mb-3">Tổng Đơn Hàng</h4>
@@ -53,7 +56,8 @@
                     <button class="btn-checkout" onclick="checkout()">
                         <i class="bi bi-credit-card"></i> Thanh Toán
                     </button>
-                    <a href="/pages/BookTours.html" class="btn-continue" style="display: block; text-align: center; margin-top: 15px;">
+                    <a href="BookTours.html" class="btn-continue"
+                        style="display: block; text-align: center; margin-top: 15px;">
                         <i class="bi bi-arrow-left"></i> Tiếp tục mua hàng
                     </a>
                 </div>
@@ -64,7 +68,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="/img/logo.png" alt="L'Hospital Travel" style="width: 130px;">
+                <img src="../img/logo.png" alt="L'Hospital Travel" style="width: 130px;">
             </div>
             <div class="footer-info">
                 <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
@@ -83,40 +87,39 @@
     </footer>
 
     <script>
-        // Cart Management System
         class CartManager {
             constructor() {
                 this.cart = this.loadCart();
                 this.render();
             }
-            
+
             loadCart() {
                 const saved = localStorage.getItem('tourCart');
                 return saved ? JSON.parse(saved) : [];
             }
-            
+
             saveCart() {
                 localStorage.setItem('tourCart', JSON.stringify(this.cart));
                 this.updateCartCount();
             }
-            
+
             addItem(item) {
                 const existing = this.cart.find(i => i.id === item.id);
                 if (existing) {
                     existing.quantity += 1;
                 } else {
-                    this.cart.push({...item, quantity: 1});
+                    this.cart.push({ ...item, quantity: 1 });
                 }
                 this.saveCart();
                 this.render();
             }
-            
+
             removeItem(id) {
                 this.cart = this.cart.filter(item => item.id !== id);
                 this.saveCart();
                 this.render();
             }
-            
+
             updateQuantity(id, quantity) {
                 const item = this.cart.find(i => i.id === id);
                 if (item) {
@@ -125,22 +128,22 @@
                     this.render();
                 }
             }
-            
+
             updateCartCount() {
                 const count = this.cart.reduce((sum, item) => sum + item.quantity, 0);
                 document.getElementById('cart-count').textContent = count;
             }
-            
+
             formatPrice(price) {
                 return price.toLocaleString('vi-VN') + ' VNĐ';
             }
-            
+
             calculateTotals() {
                 const subtotal = this.cart.reduce((sum, item) => {
                     const price = parseInt(item.price.replace(/[^0-9]/g, ''));
                     return sum + (price * item.quantity);
                 }, 0);
-                
+
                 const discount = this.cart.reduce((sum, item) => {
                     if (item.oldPrice) {
                         const oldPrice = parseInt(item.oldPrice.replace(/[^0-9]/g, ''));
@@ -149,21 +152,21 @@
                     }
                     return sum;
                 }, 0);
-                
+
                 return { subtotal, discount, total: subtotal };
             }
-            
+
             render() {
                 const container = document.getElementById('cart-items');
                 this.updateCartCount();
-                
+
                 if (this.cart.length === 0) {
                     container.innerHTML = `
                         <div class="empty-cart">
                             <i class="bi bi-cart-x"></i>
                             <h3>Giỏ hàng của bạn đang trống</h3>
                             <p style="color: #999; margin-bottom: 20px;">Hãy khám phá các tour du lịch tuyệt vời của chúng tôi!</p>
-                            <a href="/pages/BookTours.html" class="btn-continue">
+                            <a href="BookTours.html" class="btn-continue">
                                 <i class="bi bi-search"></i> Khám phá tour
                             </a>
                         </div>
@@ -173,7 +176,7 @@
                     document.getElementById('total').textContent = '0 VNĐ';
                     return;
                 }
-                
+
                 container.innerHTML = this.cart.map(item => `
                     <div class="cart-item">
                         <img src="${item.image}" alt="${item.name}">
@@ -204,23 +207,24 @@
                         </div>
                     </div>
                 `).join('');
-                
+
                 const { subtotal, discount, total } = this.calculateTotals();
                 document.getElementById('subtotal').textContent = this.formatPrice(subtotal + discount);
                 document.getElementById('discount').textContent = '-' + this.formatPrice(discount);
                 document.getElementById('total').textContent = this.formatPrice(total);
             }
         }
-        
+
         const cartManager = new CartManager();
-        
+
         function checkout() {
             if (cartManager.cart.length === 0) {
                 alert('Giỏ hàng của bạn đang trống!');
                 return;
             }
-            window.location.href = '/pages/ThanhToan.html';
+            window.location.href = 'ThanhToan.html';
         }
     </script>
 </body>
+
 </html>
