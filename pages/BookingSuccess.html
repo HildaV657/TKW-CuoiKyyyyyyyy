@@ -1,178 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi-VN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đặt Tour Thành Công! - L'Hospital Travel</title>
+    <title>Thanh toán Tour - L'Hospital Travel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="../css/style-booking1.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-booking1.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        :root {
-            --primary-color: #6a1b9a;
-            --secondary-color: #c64ab8;
-            --dark-color: #013668;
-            --light-color: #f6f7f8;
-            --success-color: #4CAF50;
-            --text-color: #222;
-        }
-
-        body {
-            padding-top: 0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
-        }
-
-        .banner img {
-            width: 100%;
-            display: block;
-        }
-
-        header {
-            background: white;
-            color: #4F1C6B;
-            padding: 15px 0;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            margin: auto;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: black;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .success-wrapper {
-            max-width: 800px;
-            margin: 50px auto 100px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .success-card {
-            background: #EEEEEE;
-            border-radius: 14px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px 30px;
-        }
-
-        .success-icon {
-            color: var(--success-color);
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .success-card h2 {
-            font-family: "SVN-Gilroy-Bold", sans-serif;
-            color: var(--success-color);
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .success-card p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .order-details {
-            text-align: left;
-            border-top: 1px dashed #ddd;
-            border-bottom: 1px dashed #ddd;
-            padding: 15px 0;
-            margin-bottom: 25px;
-        }
-
-        .order-details p {
-            margin-bottom: 8px;
-            font-size: 15px;
-            color: var(--text-color);
-        }
-
-        .order-details strong {
-            font-family: "SVN-Gilroy-Bold", sans-serif;
-            color: var(--dark-color);
-            margin-right: 10px;
-        }
-
-        .btn-group-success {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .btn-group-success a {
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s;
-            text-decoration: none;
-            background: #fff;
-        }
-
-        .btn-home {
-            background-color: #eee;
-            color: var(--text-color);
-        }
-
-        .btn-home:hover {
-            background-color: #ddd;
-        }
-
-        .btn-view-order {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-        }
-
-        .btn-view-order:hover {
-            opacity: 0.9;
-            box-shadow: 0 4px 8px rgba(103, 58, 183, 0.4);
-        }
-    </style>
 </head>
+<body>
 
-<body class="ck-content">
     <div class="banner">
-        <img src="../img/slogan.png">
+        <img src="../img/slogan.png" alt="banner">
     </div>
     <header>
         <nav class="navbar">
@@ -182,35 +22,76 @@
                 <li><a href="BookTours.html">Đặt tour</a></li>
                 <li><a href="Gioithieu.html">Liên hệ</a></li>
                 <li><a href="services.html">Các dịch vụ khác</a></li>
-                <li><a href="cart.html"><i class="bi bi-cart3"></i> Giỏ hàng (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="success-wrapper">
-        <div class="success-card">
-            <i class="fa-solid fa-circle-check success-icon"></i>
+    <div class="layout">
+        <div class="booking-container" style="background:#EEEEEE; padding:30px; border-radius:12px; width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+            <h2 style="color:var(--primary-color); font-weight:700; text-align:center; margin-bottom:25px;">THÔNG TIN ĐẶT TOUR</h2>
+            
+            <form id="booking-form">
+                <div class="mb-3">
+                    <label for="tourName" class="form-label fw-bold">Tên tour</label>
+                    <select id="tourName" class="form-select" required>
+                        <option value="" disabled selected>-- Chọn tour --</option>
+                        <option value="Sapa" data-price="14890000">Du lịch SaPa</option>
+                        <option value="BuonMaThuot" data-price="4890000">Du lịch Buôn Ma Thuột</option>
+                        <option value="PhuQuoc" data-price="10890000">Du lịch Phú Quốc - Vinpearl</option>
+                        <option value="Hue" data-price="8900000">Tour du lịch Huế</option>
+                        <option value="DaNang" data-price="6900000">Tour du lịch Đà Nẵng</option>
+                        <option value="MocChau" data-price="13950000">Tour du lịch Mộc Châu</option>
+                        <option value="DaLat" data-price="4890000">Du lịch Đà Lạt</option>
+                        <option value="HCM" data-price="890000">Du lịch TP Hồ Chí Minh</option>
+                    </select>
+                </div>
 
-            <h2>ĐẶT TOUR THÀNH CÔNG!</h2>
-            <p>
-                Xin chúc mừng! Đơn hàng của Quý khách đã được xác nhận. Chúng tôi sẽ liên hệ với Quý khách trong vòng 2
-                giờ tới để hoàn tất hồ sơ tour.
-            </p>
+                <div class="mb-3">
+                    <label for="departure" class="form-label fw-bold">Địa điểm xuất phát</label>
+                    <select id="departure" class="form-select" required>
+                        <option value="" disabled selected>-- Chọn địa điểm --</option>
+                        <option value="HCM">TP Hồ Chí Minh</option>
+                    </select>
+                </div>
 
-            <div class="order-details">
-                <p><strong>Mã Đơn Hàng:</strong> LHT-20250430-1024</p>
-                <p><strong>Ngày Đặt:</strong> 28/10/2025</p>
-                <p><strong>Tour Đã Đặt:</strong> Du lịch SaPa </p>
-                <p><strong>Số Tiền Thanh Toán:</strong> <span style="color: #d32f2f; font-weight: 700;">14.890.000 VND</span></p>
-            </div>
+                <div class="mb-3">
+                    <label for="startDate" class="form-label fw-bold">Ngày khởi hành</label>
+                    <input type="date" id="startDate" class="form-control" required>
+                </div>
 
-            <p style="font-size: 14px; margin-bottom: 0;">
-                Quý khách vui lòng kiểm tra hộp thư **Email** (*tenkhachhang@example.com*) để nhận biên nhận chi tiết.
-            </p>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="adults" class="form-label fw-bold">Số người lớn</label>
+                        <input type="number" id="adults" class="form-control" value="1" min="1" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="children" class="form-label fw-bold">Số trẻ em</label>
+                        <input type="number" id="children" class="form-control" value="0" min="0" required>
+                    </div>
+                </div>
 
-            <div class="btn-group-success">
-                <a href="/" class="btn-home">Quay về Trang Chủ</a>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Tổng tiền dự kiến</label>
+                    <input type="text" id="totalPrice" class="form-control" readonly style="font-weight:bold; color:#d32f2f;">
+                </div>
+
+                <div class="mb-3">
+                    <label for="fullname" class="form-label fw-bold">Họ và tên</label>
+                    <input type="text" id="fullname" class="form-control" placeholder="Nhập họ và tên" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-bold">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Nhập email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label fw-bold">Số điện thoại</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Nhập số điện thoại" required>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-lg" style="background:linear-gradient(90deg,#7b3cd6,#c64ab8); color:white; border:none; border-radius:8px; padding:12px 30px;">Xác nhận thanh toán</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -219,12 +100,10 @@
             <div class="footer-logo">
                 <img src="../img/logo.png" alt="L'Hospital Travel">
             </div>
-
             <div class="footer-info">
                 <h4>CÔNG TY L'HOSPITAL TRAVEL</h4>
                 <p><i class="fa fa-map-marker"></i> 280 An Dương Vương, Phường Chợ Quán, Quận 5, TP. Hồ Chí Minh</p>
             </div>
-
             <div class="icon">
                 <p>Mạng xã hội</p>
                 <i class="bi bi-facebook"></i>
@@ -232,16 +111,35 @@
                 <i class="bi bi-twitter"></i>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>FIT HCMUE © 2025</p>
             <div class="footer-pay">
                 <p>Chấp nhận thanh toán</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard">
             </div>
         </div>
     </footer>
-</body>
 
+    <script>
+        function updateTotal() {
+            const selectedTour = $("#tourName option:selected");
+            const price = parseFloat(selectedTour.data("price")) || 0;
+            const adults = parseInt($("#adults").val()) || 0;
+            const children = parseInt($("#children").val()) || 0;
+            const total = price * adults + (price * 0.6 * children); 
+            $("#totalPrice").val(total.toLocaleString("vi-VN") + " VND");
+        }
+
+        $("#tourName, #adults, #children").on("change keyup", updateTotal);
+        $(document).ready(updateTotal);
+
+        $("#booking-form").on("submit", function(e){
+            e.preventDefault();
+            alert("✅ Cảm ơn bạn đã đặt tour! Chúng tôi sẽ liên hệ xác nhận sớm nhất.");
+            this.reset();
+            updateTotal();
+        });
+    </script>
+</body>
 </html>

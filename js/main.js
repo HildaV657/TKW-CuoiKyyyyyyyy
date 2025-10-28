@@ -11,8 +11,6 @@ $(document).ready(function(){
         smartSpeed: 1000,
         responsive:{ 0:{ items: 1 }, 820:{ items: 1 }, 1300:{ items: 1 } }
     });
-
-    // 2. Khởi tạo Slider Tour (Quan trọng)
     $('.slide__tour').owlCarousel({
         loop: true,
         margin: 25,
@@ -27,16 +25,12 @@ $(document).ready(function(){
         smartSpeed: 1000,
         responsive:{ 0:{ items: 1 }, 820:{ items: 2 }, 1300:{ items: 3 } }
     });
-    
-    // Khối điều chỉnh autoplay trên mobile (Giữ lại để tối ưu UX)
     if ($(window).width() < 768) {
         $('.slide__tour').trigger('stop.owl.autoplay');
     } else {
         $('.slide__tour').trigger('play.owl.autoplay');
     }
 });
-
-// Xử lý menu ngôn ngữ (Giả định có sử dụng)
 $('.language p').click(function(){
     $(this).next('.main__lg').toggleClass('active');
     $(this).toggleClass('rotate-icon');
@@ -47,8 +41,6 @@ $(document).mouseup(function (e) {
         $(".language p").removeClass('rotate-icon'); 
     }
 });
-
-// Header cố định khi cuộn
 $(window).scroll(function(){
     if($(this).scrollTop() > 100){
         $('header').addClass('active');
@@ -56,8 +48,6 @@ $(window).scroll(function(){
         $('header').removeClass('active');
     }
 });
-
-// Xử lý Menu Mobile (Rất quan trọng cho mobile)
 $('.menu__bar').click(function(){
     $('.menu__mobile').addClass('active');
     $('.overlay').addClass('active');
@@ -77,7 +67,6 @@ $('.close-menu').click(function(){
     $('.menu__mobile').removeClass('active');
 });
 
-// Back-to-Top (Nút cuộn lên đầu trang)
 $(window).scroll(function () {
     if ($(this).scrollTop() >= 300) {
         $('.back-to-top').addClass('animate');
@@ -91,8 +80,6 @@ $('.back-to-top').click(function () {
         scrollTop: 0
     }, 1000);
 });
-
-// Chức năng cuộn mượt đến anchor
 $(".goto").click(function () {
     $('html, body').animate({
         scrollTop: $($(this).attr('href')).offset().top - $(this).outerHeight() - 40
